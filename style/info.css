@@ -1,0 +1,46 @@
+body {
+    background-image: url(/img/inf01.png);
+    background-size: cover;
+    display: flex;
+}
+
+
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #333; 
+    color: white;
+}
+
+ 
+nav {
+    text-align: center;
+}
+
+ 
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+ .menu li {
+    margin: 0 20px;
+    left: 100%;
+}
+ 
+.menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; 
+}
+
+
+.menu a:hover {
+    color: #ddd;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mensagens</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="info.html">
+    <button>
+      menu principal
+    </button>
+
+  </a>
+  <h1>Mensagens</h1>
+
+  <table id="tabelaMensagens">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Mensagem</th>
+      </tr>
+    </thead>
+    <tbody id="corpoTabela"></tbody>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="api.js"></script>
+  <script>
+    function exibirMensagensNaTabela(mensagens) {
+      const corpoTabela = document.getElementById('corpoTabela');
+
+      mensagens.forEach(mensagem => {
+        const newRow = corpoTabela.insertRow();
+        const cellNome = newRow.insertCell(0);
+        const cellEmail = newRow.insertCell(1);
+        const cellMensagem = newRow.insertCell(2);
+
+        cellNome.textContent = mensagem.nome;
+        cellEmail.textContent = mensagem.email;
+        cellMensagem.textContent = mensagem.mensagem;
+      });
+    }
+
+    const mensagensDaAPI = obterMensagens(); // Chamada para obter as mensagens da API
+
+    exibirMensagensNaTabela(mensagensDaAPI);
+  </script>
+</body>
+</html>

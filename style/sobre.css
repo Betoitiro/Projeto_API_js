@@ -1,0 +1,14 @@
+body{
+    background-image: url(/img/info02.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+.sobre{
+    font:italic;
+    color: aliceblue;
+}
+.but{
+    background-color: rgb(212, 0, 255);
+}
